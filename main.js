@@ -31,10 +31,12 @@ var calcQuadrants = function(depth,xh,yh){
     var cw = width/(2**(depth));
     var cx = cw*xh;
     var cy = cw*yh;
-    ctx.strokeRect(cx,cy,cw,cw);
+    if(depth < 10)ctx.strokeRect(cx,cy,cw,cw);
     if(depth > itrs){
-        ctx.fillStyle = "#f00";
-        ctx.fillRect(cx,cy,cw,cw);
+        if(depth < 10){
+            ctx.fillStyle = "#f00";
+            ctx.fillRect(cx,cy,cw,cw);
+        }
         return [0,0];
     }
     
