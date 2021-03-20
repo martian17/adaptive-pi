@@ -18,6 +18,7 @@ button.addEventListener("click",function(){
 
 var calcpi = function(itrs){
     ctx.clearRect(0,0,width,height);
+    ctx.strokeStyle = "#0004";
     cnt = 0;
     var [inner,outer] = calcQuadrants(0,0,0);
     console.log(inner,outer);
